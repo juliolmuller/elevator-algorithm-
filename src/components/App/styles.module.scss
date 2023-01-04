@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+
+  padding: 4rem;
+
+  h1 {
+    text-shadow: 1px 1px 0 var(--color-black);
+    font-family: var(--font-monospace);
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  p {
+    color: red;
+    font-size: 1.5rem;
+    text-align: center;
+
+    &[data-enabled="true"] {
+      color: green;
+    }
+  }
+
+  button {
+    border: 1px solid var(--color-white);
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-grey-900);
+      font-weight: 400;
+    }
+  }
+}
