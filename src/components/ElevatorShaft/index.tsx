@@ -27,9 +27,9 @@ function ElevatorShaft({ floors, onCall }: ElevatorShaftProps) {
       {floorsArray.map((_, index) => (
         <Floor
           key={index}
-          index={floorsArray.length - index - 1}
-          onCallUp={index < floorsArray.length - 1 ? handleCallUp : undefined}
-          onCallDown={index > 0 ? handleCallDown : undefined}
+          index={actualFloors - index}
+          onCallUp={index > 0 ? handleCallUp : undefined}
+          onCallDown={index < actualFloors - 1 ? handleCallDown : undefined}
         />
       ))}
 
