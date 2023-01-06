@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import Floor from '~/components/Floor'
+import ElevatorShaft from '~/components/ElevatorShaft'
 
 import styles from './styles.module.scss'
 
@@ -12,10 +12,7 @@ function App() {
       <h1>The Elevator Algorithm</h1>
 
       <div className={styles.elevator}>
-        <Floor name="T" onGoUpCall={() => {}} />
-        <Floor name="1" onGoUpCall={() => {}} onGoDownCall={() => {}} />
-        <Floor name="2" onGoUpCall={() => {}} onGoDownCall={() => {}} />
-        <Floor name="3" onGoDownCall={() => {}} />
+        <ElevatorShaft floors={3} onCall={console.log} />
       </div>
 
       <div className={styles.controls}>

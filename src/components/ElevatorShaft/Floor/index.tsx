@@ -1,36 +1,36 @@
 import styles from './styles.module.scss'
 
 interface FloorProps {
-  name: string
-  onGoDownCall?: () => void
-  onGoUpCall?: () => void
+  index: number
+  onCallDown?: (index: number) => void
+  onCallUp?: (index: number) => void
 }
 
-function Floor({ onGoDownCall, onGoUpCall, name }: FloorProps) {
+function Floor({ index, onCallDown, onCallUp }: FloorProps) {
   return (
     <div className={styles.root}>
       <div className={styles.ground} />
       <div className={styles.walls} />
 
       <div className={styles.panel}>
-        <span>{name}</span>
+        <span>{index}</span>
 
-        {onGoUpCall && (
+        {onCallUp && (
           <button
             className={styles.btnUp}
             tabIndex={-1}
             type="button"
-            onClick={onGoUpCall}
+            onClick={() => onCallUp(index)}
             aria-label="Call elevator to go up"
           />
         )}
 
-        {onGoDownCall && (
+        {onCallDown && (
           <button
             className={styles.btnDown}
             tabIndex={-1}
             type="button"
-            onClick={onGoDownCall}
+            onClick={() => onCallDown(index)}
             aria-label="Call elevator to go down"
           />
         )}
