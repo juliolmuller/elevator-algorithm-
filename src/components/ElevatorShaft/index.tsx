@@ -1,4 +1,7 @@
+import { useState } from 'react'
+
 import Ceiling from './Ceiling'
+import Elevator from './Elevator'
 import Floor from './Floor'
 import Ground from './Ground'
 import styles from './styles.module.scss'
@@ -9,6 +12,7 @@ interface ElevatorShaftProps {
 }
 
 function ElevatorShaft({ floors, onCall }: ElevatorShaftProps) {
+  const [currentFloor, setCurrentFloor] = useState(0)
   const actualFloors = Math.max(1, floors)
   const floorsArray = Array(actualFloors + 1).fill(undefined)
 
@@ -33,7 +37,19 @@ function ElevatorShaft({ floors, onCall }: ElevatorShaftProps) {
         />
       ))}
 
+      <Elevator floor={currentFloor} />
       <Ground />
+
+      <input
+        style={{
+          position: 'fixed',
+          bottom: '4rem',
+          right: '4rem',
+        }}
+        type="number"
+        value={currentFloor}
+        onChange={(e) => setCurrentFloor(Number(e.target.value))}
+      />
     </div>
   )
 }
