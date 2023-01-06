@@ -1,0 +1,87 @@
+.root {
+  overflow: hidden;
+  position: relative;
+
+  height: 50px;
+  width: 200px;
+  margin-left: 100px;
+  border: 10px solid currentColor;
+  border-top: none;
+
+  svg {
+    position: absolute;
+    bottom: 0;
+
+    animation: ratMove 20s linear 10s infinite;
+    opacity: 0;
+    transform-origin: bottom;
+  }
+}
+
+@keyframes ratMove {
+  0% {
+    opacity: 1;
+    transform: translate(-132px, 3px) rotateY(0deg) rotateZ(5deg);
+  }
+
+  2% {
+    transform: translate(-118px, 3px) rotateY(0deg) rotateZ(5deg);
+  }
+
+  8% {
+    transform: translate(-118px, 3px) rotateY(0deg) rotateZ(5deg);
+  }
+
+  10% {
+    transform: translate(-40px, 3px) rotateY(0deg) rotateZ(5deg);
+  }
+
+  18% {
+    transform: translate(-40px, 3px) rotateY(0deg) rotateZ(5deg);
+  }
+
+  20% {
+    transform: translate(45px, 3px) rotateY(0deg) rotateZ(5deg);
+  }
+
+  28% {
+    transform: translate(45px, 3px) rotateY(0deg) rotateZ(5deg);
+  }
+
+  30% {
+    transform: translate(132px, 3px) rotateY(0deg) rotateZ(5deg);
+  }
+
+  35% {
+    transform: translate(132px, 3px) rotateY(180deg) rotateZ(5deg);
+  }
+
+  37% {
+    transform: translate(132px, 3px) rotateY(180deg) rotateZ(5deg);
+  }
+
+  40% {
+    transform: translate(20px, 3px) rotateY(180deg) rotateZ(5deg);
+  }
+
+  44% {
+    transform: translate(20px, 3px) rotateY(180deg) rotateZ(5deg);
+  }
+
+  45% {
+    transform: translate(-20px, 3px) rotateY(180deg) rotateZ(5deg);
+  }
+
+  50% {
+    transform: translate(-20px, 3px) rotateY(180deg) rotateZ(5deg);
+  }
+
+  54% {
+    transform: translate(-132px, 3px) rotateY(180deg) rotateZ(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-132px, 3px) rotateY(180deg) rotateZ(5deg);
+  }
+}

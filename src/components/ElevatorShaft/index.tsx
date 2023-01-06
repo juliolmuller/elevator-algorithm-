@@ -1,4 +1,6 @@
+import Ceiling from './Ceiling'
 import Floor from './Floor'
+import Ground from './Ground'
 import styles from './styles.module.scss'
 
 interface ElevatorShaftProps {
@@ -20,14 +22,18 @@ function ElevatorShaft({ floors, onCall }: ElevatorShaftProps) {
 
   return (
     <div className={styles.root}>
+      <Ceiling />
+
       {floorsArray.map((_, index) => (
         <Floor
           key={index}
-          index={index}
+          index={floorsArray.length - index - 1}
           onCallUp={index < floorsArray.length - 1 ? handleCallUp : undefined}
           onCallDown={index > 0 ? handleCallDown : undefined}
         />
       ))}
+
+      <Ground />
     </div>
   )
 }
