@@ -1,5 +1,6 @@
 .root {
   overflow: hidden;
+  transition-delay: 1s;
   transition-duration: 2s;
   transition-property: transform;
   transition-timing-function: ease-in-out;
@@ -17,18 +18,20 @@
 .door {
   box-sizing: content-box;
   display: inline-block;
+  transition: transform 1s ease;
 
   height: 100%;
   width: 50%;
+  margin-left: -5px;
+  border-right: 5px solid currentColor;
   background: var(--color-grey-500);
 
-  &:first-of-type {
-    margin-left: -5px;
-    border-right: 5px solid currentColor;
+  &.doorOpen {
+    transform: translateX(-100%);
   }
 
   &:last-of-type {
-    margin-right: -5px;
-    border-left: 5px solid currentColor;
+    rotate: 180deg;
+    margin: 0 -5px 0 0;
   }
 }
